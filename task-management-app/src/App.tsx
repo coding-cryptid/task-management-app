@@ -1,19 +1,21 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import TaskList from './components/TaskList';
-import TaskForm from './components/TaskForm';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { TaskProvider } from './context/TaskContext';
+import Dashboard from './pages/Dashboard';
+import TaskDetails from './pages/TaskDetails';
+import TaskCreate from './pages/TaskCreate';
+import TaskEdit from './pages/TaskEdit';
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <TaskProvider>
       <Routes>
-        <Route path="/" element={<TaskList />} />
-        <Route path="/tasks/new" element={<TaskForm />} />
-        <Route path="/tasks/:id/edit" element={<TaskForm />} />
-        <Route path="/tasks/:id" element={<TaskForm />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/tasks/new" element={<TaskCreate />} />
+        <Route path="/tasks/:id/edit" element={<TaskEdit />} />
+        <Route path="/tasks/:id" element={<TaskDetails />} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
-    </Router>
+    </TaskProvider>
   );
 };
 
