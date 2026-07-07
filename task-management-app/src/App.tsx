@@ -11,6 +11,7 @@ const App: React.FC = () => {
         <Route path="/tasks/new" element={<TaskForm />} />
         <Route path="/tasks/:id/edit" element={<TaskForm />} />
         <Route path="/tasks/:id" element={<TaskForm />} />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </Router>
   );
