@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useReducer, ReactNode } from 'react';
 import type { Task, TaskFormInput } from '../types/task';
-import type { taskReducer, initialTaskState, TaskState } from './TaskReducer';
+import type { TaskState } from './TaskReducer';
+import { taskReducer, initialTaskState } from './TaskReducer';
 
 interface TaskContextValue extends TaskState {
   addTask: (input: TaskFormInput, ownerId: string) => void;
@@ -16,7 +17,7 @@ export function TaskProvider({ children }: { children: ReactNode }) {
   const addTask = (input: TaskFormInput, ownerId: string) => {
     const newTask: Task = {
       ...input,
-      id: crypto.randomUUID(),       // generates a unique id client-side
+      id: crypto.randomUUID(),
       createdAt: new Date().toISOString(),
       ownerId,
     };
