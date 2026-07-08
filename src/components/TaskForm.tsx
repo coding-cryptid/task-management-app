@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import type { FormEvent } from 'react';
-import type { TaskFormInput, TaskStatus, TaskPriority, TaskFormErrors } from '../types/task';
+import type { SubmitEventHandler } from 'react';
+import type { TaskFormInput, TaskFormErrors } from '../types/task';
 import { validateTask } from '../utils/ValidateTask';
 
 interface TaskFormProps {
@@ -28,15 +28,15 @@ export default function TaskForm({ initialValues, onSubmit, submitLabel }: TaskF
     setValues((prev) => ({ ...prev, [name]: value === '' ? null : value }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit: SubmitEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     const validationErrors = validateTask(values);
     setErrors(validationErrors);
 
-    if (Object.keys(validationErrors).length === 0) {
-      onSubmit(values);
-    }
-  };
+  if (Object.keys(validationErrors).length === 0) {
+    onSubmit(values);
+  }
+};
 
   return (
     <form onSubmit={handleSubmit}>
