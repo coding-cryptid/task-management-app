@@ -23,8 +23,8 @@ export default function TaskDetails() {
 
   return (
     <div className="container mt-4">
-      <h1>{task.title}</h1>
-      <p className="text-muted">{task.description}</p>
+      <h1 className="task-title">{task.title}</h1>
+      <p className="text-muted task-description">{task.description}</p>
 
       <ul className="list-unstyled">
         <li><strong>Status:</strong> {task.status}</li>
