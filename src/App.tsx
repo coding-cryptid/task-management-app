@@ -4,6 +4,7 @@ import Dashboard from './pages/Dashboard';
 import TaskCreate from './pages/TaskCreate';
 import TaskDetails from './pages/TaskDetails';
 import TaskEdit from './pages/TaskEdit';
+import '/styles.css';
 
 function App() {
   return (
