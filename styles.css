@@ -1,4 +1,36 @@
 * {
     font-family: 'Poppins', sans-serif;
+    background-color: floralwhite;
+    text-align: center;
+    color: rgb(22, 22, 22);
+    h1 {
+        font-size: 36px;
+        color: deeppink;
+    }
 }
 
+/* TASK FORM */
+form div {
+    margin: 15px;
+}
+
+label {
+   display: flex;
+   flex-direction: column;
+   padding-bottom: 5px;
+   font-size: 20px;
+}
+
+textarea, 
+select,
+input {
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 1px solid pink;
+    color: rgb(69, 13, 42);
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
