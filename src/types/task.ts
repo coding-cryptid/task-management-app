@@ -14,3 +14,8 @@ export interface Task {
 
 export type TaskFormInput = Omit<Task, 'id' | 'createdAt' | 'ownerId'>;
 export type TaskUpdateInput = Partial<Omit<Task, 'id'>> & { id: string };
+
+export interface TaskFormErrors {
+  title?: string;
+  dueDate?: string;
+}
