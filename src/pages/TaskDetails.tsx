@@ -22,7 +22,7 @@ export default function TaskDetails() {
   };
 
   return (
-    <div className="container mt-4 card-style">
+    <div className="container mt-4">
       <h1>{task.title}</h1>
       <p className="text-muted">{task.description}</p>
 
