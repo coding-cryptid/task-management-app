@@ -22,9 +22,7 @@ export default function TaskDetails() {
   };
 
   return (
-    <div className="container mt-4">
-      <Link to="/" className="btn btn-link ps-0">Back to Dashboard</Link>
-
+    <div className="container mt-4 card-style">
       <h1>{task.title}</h1>
       <p className="text-muted">{task.description}</p>
 
@@ -45,6 +43,7 @@ export default function TaskDetails() {
         <button className="btn btn-danger" onClick={handleDelete}>
           Delete Task
         </button>
+        <Link to="/" className="btn btn-link ps-0">Back to Dashboard</Link>
       </div>
     </div>
   );
