@@ -9,7 +9,18 @@
     }
 }
 
-/* TASK FORM */
+.btn {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 1px solid deeppink;
+    background-color: rgb(255, 223, 230);
+    color: rgb(69, 13, 42);
+    text-decoration: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+/* TASK FORM START */
 form div {
     margin: 15px;
 }
@@ -34,3 +45,4 @@ textarea {
     resize: none;
     height: 100px;
 }
+/* TASK FORM END */
