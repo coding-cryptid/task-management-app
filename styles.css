@@ -3,6 +3,7 @@
     background-color: floralwhite;
     text-align: center;
     color: rgb(22, 22, 22);
+    background-color: transparent;
     h1 {
         font-size: 36px;
         color: deeppink;
@@ -46,3 +47,41 @@ textarea {
     height: 100px;
 }
 /* TASK FORM END */
+
+
+/* TASK CARD START */
+.card {
+    border: 1px solid deeppink;
+    border-radius: 5px;
+    background-color: rgb(255, 223, 230);
+    color: rgb(69, 13, 42);
+    margin: 40px;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: inset 8px 8px 0px pink;
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.badge {
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    justify-content: space-between;
+    color: rgb(69, 13, 42);
+}
+/* TASK CARD END */
