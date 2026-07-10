@@ -4,8 +4,9 @@ import Dashboard from './pages/Dashboard';
 import TaskCreate from './pages/TaskCreate';
 import TaskDetails from './pages/TaskDetails';
 import TaskEdit from './pages/TaskEdit';
-import '/styles.css';
 import AuthButton from './components/AuthButton';
+import ProtectedRoute from './components/ProtectedRoute';
+import '/styles.css';
 
 function App() {
   return (
@@ -15,10 +16,10 @@ function App() {
           <AuthButton />
         </nav>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/tasks/new" element={<TaskCreate />} />
-          <Route path="/tasks/:id" element={<TaskDetails />} />
-          <Route path="/tasks/:id/edit" element={<TaskEdit />} />
+          <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+          <Route path="/tasks/new" element={<ProtectedRoute><TaskCreate /></ProtectedRoute>} />
+          <Route path="/tasks/:id" element={<ProtectedRoute><TaskDetails /></ProtectedRoute>} />
+          <Route path="/tasks/:id/edit" element={<ProtectedRoute><TaskEdit /></ProtectedRoute>} />
         </Routes>
       </BrowserRouter>
     </TaskProvider>
