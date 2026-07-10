@@ -9,7 +9,7 @@ export default function AuthButton() {
 
   if (isAuthenticated) {
     return (
-      <div className="d-flex align-items-center gap-2">
+      <div className="d-flex align-items-center">
         <span>Hi, {user?.name}</span>
         <button
           className="btn btn-outline-secondary btn-sm"
@@ -22,7 +22,7 @@ export default function AuthButton() {
   }
 
   return (
-    <button className="btn btn-primary btn-sm" onClick={() => loginWithRedirect()}>
+    <button className="nav-item btn btn-primary btn-sm" onClick={() => loginWithRedirect()}>
       Log In
     </button>
   );

@@ -4,10 +4,18 @@
     text-align: center;
     color: rgb(22, 22, 22);
     background-color: transparent;
+    margin: 0;
     h1 {
         font-size: 36px;
         color: deeppink;
     }
+}
+
+nav {
+    background-color: rgb(255, 223, 230);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid deeppink;
 }
 
 .btn {
@@ -19,6 +27,13 @@
     text-decoration: none;
     cursor: pointer;
     margin: 5px;
+}
+
+.nav-item {
+    font-size: 16px;
+    border: none;
+    padding: 10px 20px;
+    background-color: transparent;
 }
 
 /* TASK FORM START */
@@ -108,3 +123,14 @@ textarea {
     margin-bottom: 10px;
 }
 /* TASK DETAILS END */
+
+/* DASHBOARD START */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    h1 {
+        margin-bottom: 50px;
+    }
+}
+/* DASHBOARD END */

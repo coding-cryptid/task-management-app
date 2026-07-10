@@ -6,7 +6,7 @@ export default function Dashboard() {
   const { tasks, deleteTask, loading, error } = useTasks();
 
   return (
-    <div className="container mt-4">
+    <div className="dashboard container mt-4">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h1>Task Dashboard</h1>
         <Link to="/tasks/new" className="btn btn-primary">
