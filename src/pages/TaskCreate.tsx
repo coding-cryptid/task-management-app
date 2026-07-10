@@ -2,14 +2,16 @@ import { useNavigate } from 'react-router-dom';
 import { useTasks } from '../context/TaskContext';
 import TaskForm from '../components/TaskForm';
 import type { TaskFormInput } from '../types/task';
+import { useAppUser } from '../hooks/UseAppUser';
 
 export default function TaskCreate() {
   const { addTask } = useTasks();
+  const { appUser } = useAppUser();
   const navigate = useNavigate();
 
   const handleSubmit = (input: TaskFormInput) => {
-    // PLACEHOLDER. REMEMBER TO REMOVE AFTER AUTH0 INTEGRATION!
-    addTask(input, 'temp-user');
+    if (!appUser) return;
+    addTask(input, appUser.sub);
     navigate('/');
   };
 
