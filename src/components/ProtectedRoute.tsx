@@ -1,18 +1,17 @@
 import type { ReactNode } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
 import { useAppUser } from '../hooks/UseAppUser';
-import { useAuth0 } from '@auth0/auth0-react';
 
 export default function ProtectedRoute({ children }: { children: ReactNode }) {
   const { isAuthenticated, isLoading } = useAppUser();
-  const { loginWithRedirect } = useAuth0();
+  const location = useLocation();
 
   if (isLoading) {
     return <p className="text-center mt-4">Loading...</p>;
   }
 
   if (!isAuthenticated) {
-    loginWithRedirect();
-    return null;
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
   return <>{children}</>;
