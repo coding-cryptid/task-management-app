@@ -1,5 +1,5 @@
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { useTasks } from '../context/TaskContext';
+import { useTasks } from '../context/UseTasks';
 
 export default function TaskDetails() {
   const { id } = useParams<{ id: string }>();

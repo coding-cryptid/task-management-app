@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useTasks } from '../context/TaskContext';
+import { useTasks } from '../context/UseTasks';
 import TaskCard from '../components/TaskCard';
 
 export default function Dashboard() {

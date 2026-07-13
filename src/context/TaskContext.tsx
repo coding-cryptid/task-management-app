@@ -4,13 +4,15 @@ import type { Task, TaskFormInput } from '../types/task';
 import type { TaskState } from './TaskReducer';
 import { taskReducer, initialTaskState } from './TaskReducer';
 
-interface TaskContextValue extends TaskState {
+
+export interface TaskContextValue extends TaskState {
   addTask: (input: TaskFormInput, ownerId: string) => void;
   updateTask: (task: Task) => void;
   deleteTask: (id: string) => void;
+  
 }
 
-const TaskContext = createContext<TaskContextValue | undefined>(undefined);
+export const TaskContext = createContext<TaskContextValue | undefined>(undefined);
 
 export function TaskProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(taskReducer, initialTaskState);
@@ -41,12 +43,4 @@ export function TaskProvider({ children }: { children: ReactNode }) {
   };
 
   return <TaskContext.Provider value={value}>{children}</TaskContext.Provider>;
-}
-
-export function useTasks(): TaskContextValue {
-  const context = useContext(TaskContext);
-  if (context === undefined) {
-    throw new Error('useTasks must be used within a TaskProvider');
-  }
-  return context;
 }
