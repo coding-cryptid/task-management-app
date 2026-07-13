@@ -41,8 +41,10 @@ export function taskReducer(state: TaskState, action: TaskAction): TaskState {
     case 'SET_ERROR':
       return { ...state, error: action.payload };
 
-    default:
+    default: {
       const _exhaustiveCheck: never = action;
+      void _exhaustiveCheck;
       return state;
+    }
   }
 }

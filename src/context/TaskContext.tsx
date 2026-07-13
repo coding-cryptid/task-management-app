@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useReducer, ReactNode } from 'react';
+import { createContext, useContext, useReducer } from 'react';
+import type { ReactNode } from 'react';
 import type { Task, TaskFormInput } from '../types/task';
 import type { TaskState } from './TaskReducer';
 import { taskReducer, initialTaskState } from './TaskReducer';

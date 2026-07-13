@@ -30,7 +30,7 @@ export default function Register() {
   };
 
   return (
-    <div className="container mt-5" style={{ maxWidth: 420 }}>
+    <div className="container mt-5 d-flex justify-content-center" style={{ maxWidth: 420 }}>
       <div className="card shadow-sm">
         <div className="card-body text-center p-4">
           <h1 className="h3 mb-2">Create an account</h1>
