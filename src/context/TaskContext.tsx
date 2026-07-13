@@ -1,18 +1,9 @@
-import { createContext, useContext, useReducer } from 'react';
+import { useReducer } from 'react';
 import type { ReactNode } from 'react';
 import type { Task, TaskFormInput } from '../types/task';
-import type { TaskState } from './TaskReducer';
 import { taskReducer, initialTaskState } from './TaskReducer';
-
-
-export interface TaskContextValue extends TaskState {
-  addTask: (input: TaskFormInput, ownerId: string) => void;
-  updateTask: (task: Task) => void;
-  deleteTask: (id: string) => void;
-  
-}
-
-export const TaskContext = createContext<TaskContextValue | undefined>(undefined);
+import { TaskContext } from './context';
+import type { TaskContextValue } from './context';
 
 export function TaskProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(taskReducer, initialTaskState);
